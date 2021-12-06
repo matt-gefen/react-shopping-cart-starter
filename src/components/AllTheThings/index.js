@@ -3,11 +3,14 @@ import React from 'react';
 function AllTheThings(props) {
  const products = props.products.map((element, index) => {
   return (
-    <li>
+    <li 
+      onClick={() => {props.addToCart(element)}}
+      key = {index}
+    >
       {element.name} {element.price}
     </li>
     )
- })
+})
   return (
     <div className="AllTheThings">
       <h2>Put these in your cart!</h2>

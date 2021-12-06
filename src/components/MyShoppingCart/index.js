@@ -3,7 +3,10 @@ import React from 'react';
 function MyShoppingCart(props) {
   const products = props.cart.map((element, index) => {
     return (
-      <li>
+      <li 
+      onClick={() => {props.removeFromCart(index)}}
+      key = {index}
+    >
         {element.name} {element.price}
       </li>
       )
